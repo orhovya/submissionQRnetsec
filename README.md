@@ -13,7 +13,7 @@ the html is made to look exactly like the submission system site with one main c
 
 ## Demo Video of the attack
 <video controls>
-    <source src="https://github.com/orhovya/submissionQRnetsec/blob/main/Mini_Project_Attack_Simulation.mp4"
+    <source src="Mini_Project_Attack_Simulation.mp4"
             type="video/mp4"/>
     Sorry, your browser doesn't support embedded videos. You can download the video at: https://github.com/orhovya/submissionQRnetsec/blob/main/Mini_Project_Attack_Simulation.mp4
 </video>
